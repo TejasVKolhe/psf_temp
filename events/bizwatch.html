@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Pune Startup Fest'24</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Nothing+You+Could+Do&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            inter: ["Inter", "sans-serif"],
+            nycd: ["Nothing You Could Do", "cursive"],
+          },
+        },
+      },
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css'> -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css" />
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css"> -->
+
+  <link rel="shortcut icon" href="../images/navbarAndFooter/PSF24 White.webp" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+    integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../styles/event_details.css" />
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      /* height: 100%; */
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      outline: 0;
+      font-size: 100%;
+      vertical-align: baseline;
+      background: transparent;
+    }
+
+    #loading {
+      position: fixed;
+      margin: auto;
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      background-color: #0a0c26;
+      z-index: 999999999999;
+    }
+
+    #loading {
+      scale: 1.5;
+    }
+
+    .loader-container {
+      top: 45vh;
+      margin: auto;
+      position: relative;
+      width: 100px;
+      height: 100px;
+      animation: scaleAnimation 2s ease-in-out infinite;
+    }
+
+
+    .outer-ring1,
+    .outer-ring2,
+    .outer-ring3 {
+      content: '';
+      border-radius: 50%;
+      position: absolute;
+      inset: 0;
+      box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3) inset;
+      border: 1px solid #092869;
+    }
+
+    .outer-ring1 {
+      transform: scale(1.2);
+      animation: expandContract1 2.5s ease-in-out infinite;
+    }
+
+    .outer-ring2 {
+      transform: scale(1.35);
+      animation: expandContract2 2.5s ease-in-out infinite;
+
+    }
+
+    .outer-ring3 {
+      transform: scale(1.5);
+      animation: expandContract3 2.5s ease-in-out infinite;
+    }
+
+    @keyframes expandContract1 {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.25);
+      }
+    }
+
+
+    @keyframes expandContract2 {
+
+      0%,
+      100% {
+        transform: scale(1.05);
+      }
+
+      50% {
+        transform: scale(1.4);
+      }
+    }
+
+    @keyframes expandContract3 {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.6);
+      }
+    }
+
+    .loader:before,
+    .loader:after,
+    .reflection {
+      content: '';
+      border-radius: 50%;
+      position: absolute;
+      inset: 0;
+      box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3) inset;
+    }
+
+    .loader:after {
+      box-shadow: 0px 3px 15px 1px #094b69 inset;
+      animation: rotate 2s linear infinite;
+    }
+
+    .reflection {
+      transform: scaleY(-1);
+      opacity: 0.5;
+    }
+
+
+    .preimage {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.8);
+      width: 80%;
+      height: 80%;
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes scaleAnimation {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.2);
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="../styles/footer24.css">
+  <link rel="stylesheet" href="../styles/navbar24.css">
+  <!-- <link rel="stylesheet" href="../styles/preloader.css"> -->
+</head>
+
+<body>
+  <!-- PAGE LOADER -->
+  <div id="loading">
+    <div class="loader-container">
+      <!-- Outer rings -->
+      <div class="outer-ring1"></div>
+      <div class="outer-ring2"></div>
+      <div class="outer-ring3"></div>
+
+      <div class="loader">
+        <img class="image" src="../images/navbarAndFooter/PSF24 White.webp" alt="PSF'24 LOGO">
+      </div>
+    </div>
+  </div>
+  <script>
+    var loader = document.getElementById("loading");
+    window.addEventListener("load", function () {
+      setTimeout(function () {
+        $('#loading').hide();
+      }, 2000);
+    })
+  </script>
+  <!-- PAGE LOADER END -->
+  <!-- NAVBAR START -->
+  <nav style="position: fixed; z-index: 9999999;">
+    <input type="checkbox" id="checkbox3" class="checkbox3 visuallyHidden">
+    <label for="checkbox3" class="checkbtn">
+      <div class="hamburger hamburger3">
+        <span class="bar bar1"></span>
+        <span class="bar bar2"></span>
+        <span class="bar bar3"></span>
+        <span class="bar bar4"></span>
+
+      </div>
+    </label>
+
+    <!-- <input type="checkbox" id="check">
+    <label for="check" class="checkbtton">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      
+    </label> -->
+    <!-- <div class="imgg"><a href="../main"><img  class="imgg" src="PSF + Marsh White1.webp" alt=""></a></div> -->
+
+    <ul>
+      <!-- <img class="imgg" src="PSF + Marsh White1.webp" alt="PSF + Marsh White1.webp"> -->
+
+      <li> <a href="../main"> <i id="icon" class="fa-solid fa-house icon" style="padding-right: 0.5rem;"></i>
+          Home</a>
+      </li>
+      <li><a href="../aboutus"> <i id="icon" class="fa-regular fa-file-lines" style="padding-right: 0.5rem;"></i> About
+          Us</a>
+      </li>
+
+      <li><a href="../events"> <i id="icon" class="fa-sharp fa-solid fa-puzzle-piece"
+            style="padding-right: 0.5rem;"></i>Events</a></li>
+
+
+      <li><a href="../investor"><i id="icon" class="fa-solid fa-shoe-prints"
+            style="padding-right: 0.5rem;"></i>Investors</a></li>
+      <li><a href="../partners"><i id="icon" class="fa-solid fa-envelope-open-text"
+            style="padding-right: 0.5rem;"></i>Sponsors</a></li>
+
+      <div class="dropdown ">
+        <button class="dropbtn">OTHER <i class="fa-solid fa-caret-down"></i></button>
+        <div class="dropdown-content">
+          <a href="../internship_portal"> <i id="icon" class="fa-regular fa-calendar-days"
+              style="padding-right: 0.5rem;"></i>INTERNSHIP
+            PORTAL
+          </a>
+          <a href="../alumni"> <i id="icon" class="fa-regular fa-calendar-days"
+              style="padding-right: 0.5rem;"></i>Alumni
+          </a>
+          <a href="../startupexpo"> <i id="icon" class="fa-solid fa-people-group"
+              style="padding-right: 0.5rem;"></i>STARTUP</a>
+          <a href="../visitorreg.php"> <i id="icon" class="fa-solid fa-hand-holding-dollar"
+              style="padding-right: 0.5rem;"></i>Registration</a>
+          <a href="../team"> <i id="icon" class="fa-solid fa-hand-holding-dollar"
+              style="padding-right: 0.5rem;"></i>Team</a>
+        </div>
+      </div>
+      <li class="mobli"><a href="../internship_portal"> <i id="icon" class="fa-regular fa-calendar-days"
+            style="padding-right: 0.5rem;"></i>Internship
+          Portal</a></li>
+      <li class="mobli"><a href="../alumni"> <i id="icon" class="fa-regular fa-calendar-days"
+            style="padding-right: 0.5rem;"></i>Alumni
+        </a></li>
+      <li class="mobli"><a href="../startupexpo"> <i id="icon" class="fa-solid fa-people-group"
+            style="padding-right: 0.5rem;"></i>STARTUP</a></li>
+      <li class="mobli"><a href="../visitorreg.php"> <i id="icon" class="fa-solid fa-hand-holding-dollar"
+            style="padding-right: 0.5rem;"></i>Registration</a></li>
+      <li class="mobli"><a href="../team"> <i id="icon" class="fa-solid fa-hand-holding-dollar"
+            style="padding-right: 0.5rem;"></i>Team</a></li>
+
+      <div class="dropdown">
+        <button class="dropbtn">FEEDBACK <i class="fa-solid fa-caret-down"></i></button>
+        <div class="dropdown-content">
+          <a href="../startup_feedback"> <i id="icon" class="fa-regular fa-calendar-days"
+              style="padding-right: 0.5rem;"></i>Startup
+            Feedback
+          </a>
+          <a href="../investor_feedback"> <i id="icon" class="fa-regular fa-calendar-days"
+              style="padding-right: 0.5rem;"></i>Investor
+            Feedback
+          </a>
+
+        </div>
+      </div>
+      <li class="mobli"><a href="../startup_feedback"> <i id="icon" class="fa-solid fa-hand-holding-dollar"
+            style="padding-right: 0.5rem;"></i>Startup
+          Feedback</a></li>
+      <li class="mobli"><a href="../investor_feedback"> <i id="icon" class="fa-solid fa-hand-holding-dollar"
+            style="padding-right: 0.5rem;"></i>Investor
+          Feedback</a></li>
+      <!-- <li><a href="#"> <i id="icon" class="fa-regular fa-handshake" style="padding-right: 0.5rem;"></i>Feedback </a></li> -->
+      <li><a href="../contact.php"><i id="icon" class="fa-solid fa-envelope" style="padding-right: 0.5rem;"></i>Contact
+          Us</a></li>
+      <!-- <li><a href="../arrival/"><i id="icon" class="fa-solid fa-briefcase"
+                      style="padding-right: 0.5rem;"></i>Arrival</a></li>
+          <li><a href="../startup_issues/add_issue"><i id="icon" class="fa-solid fa-exclamation-circle"
+                      style="padding-right: 0.5rem;"></i>Startup Issues</a></li> -->
+    </ul>
+  </nav>
+
+  <!-- NAVBAR END -->
+  <main class="relative min-h-screen flex flex-col justify-center bg-slate-900 overflow-hidden">
+    <!-- Can add content Here(Start) accorfing to need-->
+
+    <div class="sub-menu">
+      <div class="menu-btn">
+        <button class="homebtn btn" id="homeBtn" onclick="toggleTl(this.id)">
+          <span>Read More!</span><span>Home</span>
+        </button>
+      </div>
+      <div class="menu-btn">
+        <button class="detailsbtn btn" id="detailsBtn" onclick="toggleTl(this.id)">
+          <span>Read More!</span><span>Details</span>
+        </button>
+      </div>
+      <div class="menu-btn">
+        <button class="faqbtn btn" id="strBtn" onclick="toggleTl(this.id)">
+          <span>Read More!</span><span>Structure</span>
+        </button>
+      </div>
+      <div class="menu-btn">
+        <button class="structurebtn btn" id="faqBtn" onclick="toggleTl(this.id)">
+          <span>Read More!</span><span>Guidelines</span>
+        </button>
+      </div>
+      <div class="menu-btn">
+        <button class="timelinebtn btn" id="tlBtn" onclick="toggleTl(this.id)">
+          <span>Read More!</span><span>Timeline</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="navigation_container">
+      <div class="navigation">
+        <ul>
+          <li class="list active">
+            <a href="#" id="homeBtn" onclick="toggleTl(this.id)">
+              <span class="icon">
+                <ion-icon name="home-outline"></ion-icon>
+              </span>
+              <span class="text">Home</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="#" id="detailsBtn" onclick="toggleTl(this.id)">
+              <span class="icon">
+                <i class="fa fa-file-text-o"></i>
+              </span>
+              <span class="text">Details</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="#" id="strBtn" onclick="toggleTl(this.id)">
+              <span class="icon" id="strBtn" onclick="toggleTl(this.id)">
+                <i class="fa fa-cogs"></i>
+              </span>
+              <span class="text">Structure</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="#" id="faqBtn" onclick="toggleTl(this.id)">
+              <span class="icon">
+                <i class="fas fa-question"></i>
+              </span>
+              <span class="text">Guidelines</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="#" id="tlBtn" onclick="toggleTl(this.id)">
+              <span class="icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              <span class="text">Timeline</span>
+            </a>
+          </li>
+          <div class="indicator"></div>
+        </ul>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="information_section" id="information_section">
+        <div class="image">
+          <img src="../images/pastEvents/Bizwatch.webp" style="width: 100%" alt="event name" />
+          <div class="register_button" id="register_button">
+            <a id=" reg_button" target="_blank" href="https://unstop.com/p/bizwatch-pune-startup-fest24-coep-technological-university-pune-maharashtra-865019?lb=vOs0McA"> REGISTER </a>
+          </div>
+        </div>
+        <div class="information home sec" id="home">
+          <h1>Home</h1>
+          <div class="information-content">
+            <p style="color: #fff">
+              BizWatch is a dynamic and engaging business event that revolves
+              around the theme of web series. BizWatch provides a unique
+              platform for participants to showcase their business acumen in the
+              context of web series, fostering a competitive and educational
+              environment that enhances participants' skills in decision-making,
+              money management, negotiation, resource management skills, and
+              overall business awareness. Test your corporate mettle through 5
+              pop culture-themed rounds!
+            </p>
+            <p style="color: #fff"></p>
+          </div>
+        </div>
+
+        <div class="information details sec" id="details">
+          <h1>Details</h1>
+          <div class="information-content">
+            <ul style="
+                  list-style-type: square;
+                  margin-left: 20px;
+                  margin-top: 60px;
+                  color: #fff;
+                ">
+              <li style="margin: 5px">
+                <b style="font-size: 15px">Eligibility: </b>OPEN FOR ALL (Age
+                restriction 25 Years)
+              </li>
+              <li style="margin: 5px">
+                <b style="font-size: 15px">Date of Competition: </b>Round 1:
+                27th January 2024. (11:00 AM to 5:00 PM)
+                <br />
+                Round 2: 28th January 2023. (11:00 AM to 5:00 PM)
+              </li>
+              <li style="margin: 5px">
+                <b style="font-size: 15px">Venue: </b> COEP Technological University.
+              </li>
+              <li style="margin: 5px">
+                <b style="font-size: 15px">Team Size: </b> Individual Entry
+                Only.
+              </li>
+              <li style="margin: 5px">
+                <b style="font-size: 15px">Registration Fees: </b> Rs. 49/-
+              </li>
+              <!-- <li style="margin: 5px">
+                <b style="font-size: 15px">Last date to register: </b>26th
+                January 2024
+              </li> -->
+            </ul>
+          </div>
+        </div>
+
+        <div class="information structure sec" id="structure">
+          <h1>Structure</h1>
+          <div class="information-content">
+            <ul style="
+                  list-style-type: square;
+                  margin-left: 20px;
+                  color: #fff;
+                  font-weight: 500;
+                ">
+              <li style="margin: 5px">Round 1</li>
+              <li style="margin: 5px">Squid Game</li>
+              <li style="margin: 5px">
+                Navigate workplace dilemmas like a cutthroat competitor.
+                Decisions determine your fate!
+              </li>
+              <li style="margin: 5px">Round 2</li>
+              <li style="margin: 5px">FRIENDS</li>
+              <li style="margin: 5px">
+                Dunder Mifflin mayhem! Master resource management and HR
+                like Michael Scott (minus the cringe).
+              </li>
+              <li style="margin: 5px">Round 3</li>
+              <li style="margin: 5px">THE OFFICE</li>
+              <li style="margin: 5px">
+                Money talks! Manage finances and negotiate like Chandler,
+                Monica & Co. Can you seal the deal?
+              </li>
+              <li style="margin: 5px">Round 4</li>
+              <li style="margin: 5px">Harry Potter </li>
+              <li style="margin: 5px">
+                Accio business acumen! Your magical knowledge of market trends
+                and industry spells success.
+              </li>
+              <li style="margin: 5px">Round 5</li>
+              <li style="margin: 5px">GAME OF THRONES </li>
+              <li style="margin: 5px">
+                Winter is coming…!!! Negotiate, strategize, and rise above the
+                ashes in this ultimate test of wit and cunning.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="information questions sec" id="questions">
+          <h1>Guidelines</h1>
+          <div class="information-content">
+            <ul style="
+                  list-style-type: square;
+                  margin-left: 20px;
+                  color: #fff;
+                  font-weight: 500;
+                ">
+              <li style="margin: 5px">
+                The participants must carefully read through and agree to the
+                following Terms & Conditions:
+              </li>
+              <li style="margin: 5px">
+                The decisions of the organizers will be final and binding on
+                all participants.
+              </li>
+              <li style="margin: 5px">
+                All decisions in matters of eligibility, authenticity, and
+                final judgments will be with the organizing committee of Pune
+                Startup Fest 24, COEP Technological University Pune (Formerly
+                known as College of Engineering Pune.)
+              </li>
+              <li style="margin: 5px">
+                The format and structure of events could be subject to change
+                before the actual beginning of the event.
+              </li>
+              <li style="margin: 5px">
+                Prize money AND Positions will be reduced in case of lesser
+                participation. (Less than 10)
+              </li>
+              <li style="margin: 5px">
+                NO REFUND will be given under any circumstances except less
+                than 10 registrations.
+              </li>
+              <li style="margin: 5px">
+                Entry fees are inclusive of ticketing charges.
+              </li>
+              <li style="margin: 5px">
+                Organizers will not be responsible for any injuries or mishaps
+                that happened to the participants during the event.
+              </li>
+              <li style="margin: 5px">
+                Cross-college teams, inter-year of study teams, and individual
+                entry are allowed however single member cannot be part of more
+                than one team.
+              </li>
+              <li style="margin: 5px">
+                Bizwatch competition does not clash with any other event conducted by Pune StartUp Fest. Other remaining
+                4 events are allowed.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="timeline" class="timeline sec" style="padding-bottom: 25px">
+      <h1 class="title">Events Timeline</h1>
+      <ul>
+        <li></li>
+        <li>
+          <div>
+            <time>26th Jan</time>
+            <div class="discovery">
+              <h1>BizTrivia</h1>
+              <p>Business Quiz</p>
+            </div>
+            <div class="scientist">
+              <h1>Register</h1>
+              <span> Till 12:00 AM</span>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <time>27th Jan</time>
+            <div class="discovery">
+              <h1>BizTrivia</h1>
+              <p>Round 1</p>
+            </div>
+            <div class="scientist">
+              <!-- <h1>Start</h1> -->
+              <span>11:00 am to 5:00 pm</span>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <time>28th Jan</time>
+            <div class="discovery">
+              <h1>BizTrivia</h1>
+              <p>Round 2</p>
+            </div>
+            <div class="scientist">
+              <!-- <h1>Start</h1> -->
+              <span>11:00 am to 5:00 pm</span>
+            </div>
+          </div>
+        </li>
+        <!-- <li>
+                <div>
+                  <time>1831</time>
+                  <div class="discovery">
+                    <h1>Discovery</h1>
+                    <p>
+                      Electromagnetic Induction
+                    </p>
+                  </div>
+                  <div class="scientist">
+                    <h1>Scientist</h1>
+                    <span>Michael Faraday</span>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <time>1867</time>
+                  <div class="discovery">
+                    <h1>Discovery</h1>
+                    <p>
+                      Dynamite
+                    </p>
+                  </div>
+                  <div class="scientist">
+                    <h1>Scientist</h1>
+                    <span>Alfred Nobel</span>
+                  </div>
+                </div>
+              </li> -->
+      </ul>
+    </section>
+
+    <!-- Can add content Here(End) -->
+    <div class="w-full mx-auto px-4 md:px-6 py-24">
+      <!-- Can add content Here(Start) accorfing to need-->
+
+      <!-- Can add content Here(End) -->
+    </div>
+    <!-- Can add content Here(Start) accorfing to need-->
+
+    <!-- Can add content Here(End) -->
+
+    <div class="text-center">
+      <!-- Illustration #1 -->
+      <div
+        class="absolute top-0 left-0 rotate-180 -translate-x-3/4 -scale-x-100 blur-3xl opacity-70 pointer-events-none"
+        aria-hidden="true">
+        <img src="../svg/shape.svg" class="max-w-none" width="852" height="582" alt="Illustration" />
+      </div>
+
+      <!-- Illustration #2 -->
+      <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 blur-3xl opacity-70 pointer-events-none"
+        aria-hidden="true">
+        <img src="../svg/shape.svg" class="max-w-none" width="852" height="582" alt="Illustration" />
+      </div>
+      <div class="absolute left-50 -translate-y-1/2 translate-x-1/4 blur-3xl opacity-60 pointer-events-none"
+        style="top: 90%" aria-hidden="true">
+        <img src="../svg/shape.svg" class="max-w-none" width="852" height="582" alt="Illustration" />
+      </div>
+      <!-- Illustration #3 -->
+      <div class="absolute top-80 left-100 -translate-y-1 translate-x-1/4 blur-3xl opacity-70 pointer-events-none"
+        aria-hidden="true">
+        <img src="../svg/shape.svg" class="max-w-none" width="852" height="582" alt="Illustration" />
+      </div>
+      <div class="absolute left-50 -translate-y-1/2 translate-x-1/4 blur-3xl opacity-60 pointer-events-none"
+        style="top: 90%" aria-hidden="true">
+        <img src="../svg/shape.svg" class="max-w-none" width="852" height="582" alt="Illustration" />
+      </div>
+
+      <!-- Particles animation -->
+      <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <canvas data-particle-animation></canvas>
+      </div>
+      <div class="relative"></div>
+    </div>
+    <!-- </div> -->
+
+    <!-- Ilusration #5 -->
+    <!-- <div class="absolute bottom-0 left-50 rotate-180 -translate-x-1 -scale-x-100 blur-3xl opacity-70 pointer-events-none" aria-hidden="true">
+		  <img src="../svg/shape.svg" class="max-w-none" width="852" height="582" alt="Illustration">
+	  </div> -->
+  </main>
+  <!--footer starts here -->
+  <footer>
+    <div class="footer-ft">
+      <div class="foot-container">
+
+        <div class="footbox-left">
+          <span><img class="footer-logo" ; margin-left: 30%;max-width:40%;"
+              src="../images/navbarAndFooter/PSF24 White.webp" alt=""></span>
+          <span>
+            <p class="footer-links">
+              <a href="../main" class="ftlink-1">Home</a>
+
+              <a href="../aboutus">About Us</a>
+
+              <a href="../investor">Investors</a>
+
+              <a href="../contact.php">Contact</a>
+            </p>
+          </span>
+        </div>
+
+
+        <div class="footbox-center">
+          <a target="_blank" class="footer-details" href="https://maps.app.goo.gl/bGgzdDzbVzRgRFJf6">
+            <img src="../svg/location-pin.svg" alt="location-pin" class="foot-svg style">
+            <p class="foot-detail-content"> COEP TECH Shivajinagar, Pune-411005</p>
+          </a>
+          <a class="footer-details" href="#">
+            <img src="../svg/telephone.svg" alt="telephone-logo" class="foot-svg">
+            <p class="foot-detail-content">Contact us</p>
+          </a>
+          <a class="footer-details" href="mailto:queries.psf@gmail.com">
+            <img src="../svg/mail.svg" alt="mail-logo" class="foot-svg">
+            <p class="foot-detail-content">queries.psf@gmail.com</p>
+          </a>
+        </div>
+
+
+        <div class="footbox-right"><span>
+            <div class="foot-contact">
+              <div class="foot-link-card">
+                <a class="socialContainer containerOne"
+                  href="https://www.instagram.com/biec_coep/?igshid=Yzg5MTU1MDY%3D">
+                  <svg viewBox="0 0 16 16" class="socialSvg instagramSvg">
+                    <path
+                      d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z">
+                    </path>
+                  </svg>
+                </a>
+
+                <a class="socialContainer containerTwo"
+                  href="https://www.youtube.com/c/BhausInnovationEntrepreneurshipCellCOEP2022">
+                  <img src="../svg/youtube-white.svg" alt="white youtube logo" class="socialSvg YoutubeSvg"
+                    style="scale: 1.5;">
+                </a>
+
+                <a class="socialContainer containerThree" href="https://www.linkedin.com/company/pune-startup-fest/">
+                  <svg viewBox="0 0 448 512" class="socialSvg linkdinSvg">
+                    <path
+                      d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z">
+                    </path>
+                  </svg>
+                </a>
+
+                <a class="socialContainer containerFour"
+                  href="https://twitter.com/BIEC_COEP?t=UdnnunU2-JfVRhQ_SBoRBQ&s=08">
+                  <img src="../svg/twitter-logo.png" alt="titter-logo" class="socialSvg twitterpng">
+                </a>
+
+                <a class="socialContainer containerFive" href="https://www.facebook.com/biec.coep/">
+                  <img src="../svg/facebook-white-logo.svg" alt="facebook logo" class="socialSvg facebookSvg"
+                    style="scale: 1.5;">
+                </a>
+              </div>
+
+            </div>
+            <div class="foot-mails">
+              <div class="foot-detail-cards">
+                <div class="ft-detail-card">
+                  <p class="ft-tip">Gaurav Sonewane</p>
+                  <div class="ft-detail-text">
+                    <p class="ft-second-text">Secretary</p>
+                    <a class="ft-third-text" href="mailto:secretary.psf@coeptech.ac.in">secretary.psf@coeptech.ac.in</a>
+                  </div>
+                </div>
+                <div class="ft-detail-card">
+                  <p class="ft-tip">Samta Raka</p>
+                  <div class="ft-detail-text">
+                    <p class="ft-second-text">Finance and Marketing Executive</p>
+                    <a class="ft-third-text" href="mailto:finance.psf@coeptech.ac.in">finance.psf@coeptech.ac.in</a>
+                  </div>
+                </div>
+                <div class="ft-detail-card">
+                  <p class="ft-tip">Sanmeet Sawla</p>
+                  <div class="ft-detail-text">
+                    <p class="ft-second-text">Investor Relations Executive</p>
+                    <a class="ft-third-text" href="mailto:ir.psf@coeptech.ac.in">ir.psf@coeptech.ac.in</a>
+                  </div>
+                </div>
+                <div class="ft-detail-card">
+                  <p class="ft-tip">Varun Shetty</p>
+                  <div class="ft-detail-text">
+                    <p class="ft-second-text">Events and Networking Executive</p>
+                    <a class="ft-third-text" href="mailto:events.psf@coeptech.ac.in">events.psf@coeptech.ac.in</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </span>
+        </div>
+
+
+
+
+        <div class="ft-Copyright" style="color: aqua; font-size: 14px;">
+          <p>Copyright &copy; 2024, All Rights Reserved</p>
+        </div>
+
+        <div class="ft-designed" style="color: aliceblue; font-size: 18px;">
+          <p>DESIGNED BY WEB TEAM</p>
+        </div>
+
+      </div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+  </footer>
+  <!--footer ends here -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="../js/particle-animation.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      offset: 300,
+      duration: 2000, // Animation duration in milliseconds
+      once: false, // Animation only once on page load
+    });
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <script src="https://kit.fontawesome.com/6fc46b33e7.js" crossorigin="anonymous"></script>
+  <script src="../js/event_details.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
