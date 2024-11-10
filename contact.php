@@ -175,7 +175,7 @@ $mail->Port = 587; // Use port 587 for TLS
   <div class="line"></div>
   
 </label> -->
-      <!-- <div class="imgg"><a href="./main"><img  class="imgg" src="PSF + Marsh White1.webp" alt=""></a></div> -->
+      <!-- <div class="imgg"><a href="./main.html"><img  class="imgg" src="PSF + Marsh White1.webp" alt=""></a></div> -->
 
       <ul>
           <!-- <img class="imgg" src="PSF + Marsh White1.webp" alt="PSF + Marsh White1.webp"> -->
@@ -384,11 +384,11 @@ $mail->Port = 587; // Use port 587 for TLS
               src="./images/navbarAndFooter/PSF24 White.webp" alt=""></span>
           <span>
             <p class="footer-links">
-              <a href="./main" class="ftlink-1">Home</a>
+              <a href="./main.html" class="ftlink-1">Home</a>
 
-              <a href="./aboutus">About Us</a>
+              <a href="./aboutus.html">About Us</a>
 
-              <a href="./investor">Investors</a>
+              <a href="./investor.html">Investors</a>
 
               <a href="./contact.php">Contact</a>
             </p>
