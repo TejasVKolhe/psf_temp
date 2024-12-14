@@ -1,0 +1,197 @@
+:root {
+    --bg-gradient-start: #00012E;
+    --bg-gradient-end: #023062;
+    --accent-blue: #0995CF;
+    --highlight-gold: #E2E2B6;
+    --secondary-blue: #6EACDA;
+    --text-overlay: rgba(255, 255, 255, 0.85);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+    color: var(--highlight-gold);
+    overflow: hidden;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.logo {
+    max-width: 200px;
+    filter: drop-shadow(0 0 10px var(--accent-blue));
+}
+
+main {
+    text-align: center;
+    z-index: 2;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px var(--accent-blue);
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--secondary-blue);
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.countdown-item {
+    background: rgba(2, 48, 98, 0.8);
+    padding: 1rem;
+    border-radius: 10px;
+    min-width: 100px;
+    box-shadow: 0 0 20px rgba(9, 149, 207, 0.3);
+}
+
+.countdown-item span {
+    display: block;
+}
+
+.countdown-item span:first-child {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-icon {
+    color: var(--highlight-gold);
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--secondary-blue);
+}
+
+/* Diagonal falling elements */
+.container::before,
+.container::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(45deg, transparent, var(--accent-blue), transparent);
+    animation: fall 15s linear infinite;
+    opacity: 0.1;
+}
+
+.container::before {
+    top: -100px;
+    left: -100px;
+}
+
+.container::after {
+    bottom: -100px;
+    right: -100px;
+    animation-delay: -7.5s;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(45deg);
+    }
+}
+
+/* Shining effect for logo */
+.logo {
+    position: relative;
+    overflow: hidden;
+}
+
+.logo::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) rotate(45deg);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .countdown {
+        flex-wrap: wrap;
+    }
+
+    .countdown-item {
+        min-width: 80px;
+    }
+}
