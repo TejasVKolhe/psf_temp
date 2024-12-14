@@ -1,5 +1,5 @@
 function updateCountdown() {
-  const targetDate = new Date("2025-01-01T00:00:00").getTime();
+  const targetDate = new Date("2025-01-11T00:00:00").getTime();
   const now = new Date().getTime();
   const timeLeft = targetDate - now;
   const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
